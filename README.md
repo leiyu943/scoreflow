@@ -1,6 +1,6 @@
 # 谱音 ScoreFlow
 
-[安装指引](docs/INSTALL.zh-CN.md) · [GitHub 发布指引](docs/GITHUB_RELEASE.md) · [视频介绍方案](docs/VIDEO_PLAN.zh-CN.md)
+[安装指引](docs/INSTALL.zh-CN.md) 
 
 **把多页吉他乐谱转成一首可播放、可保存的 MIDI。**
 
