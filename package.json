@@ -1,0 +1,21 @@
+{
+  "name": "scoreflow",
+  "productName": "ScoreFlow",
+  "version": "0.2.0",
+  "description": "谱音 · 本地谱面识别与 MIDI 工作台",
+  "main": "app/main.cjs",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "node node_modules/electron/install.js",
+    "test": "node --test tests/*.test.cjs",
+    "build": "node scripts/build.cjs",
+    "test:desktop": "electron . --self-test"
+  },
+  "devDependencies": {
+    "@electron/asar": "4.3.1",
+    "electron": "45.0.0",
+    "rcedit": "5.0.2"
+  }
+}

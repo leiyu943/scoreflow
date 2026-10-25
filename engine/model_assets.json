@@ -1,0 +1,23 @@
+{
+  "registry": {
+    "version": 3,
+    "staff_engine": "homr465_fp16_rules_v2",
+    "device": "cuda",
+    "tab_status": "experimental",
+    "staff_status": "optimized recognition and correction pipeline",
+    "tab_checkpoint": "models/best.pt",
+    "tab_sha256": "31c2863b78d09786dfdb9a25e9b0b8492766fcae1f94544e1ed49217a6e6ec08",
+    "mixed_tab_checkpoint": "models/best.pt",
+    "mixed_tab_sha256": "31c2863b78d09786dfdb9a25e9b0b8492766fcae1f94544e1ed49217a6e6ec08"
+  },
+  "homr": {
+    "origin": "https://github.com/liebharc/homr/releases/tag/onnx_checkpoints",
+    "models": {
+      "teacher_candidates/homr465/repo/homr/transformer/decoder_pytorch_model_465-597144cab54c8f6d0f6c9619df5c5312694eadd6_fp16.onnx": "aaac38c4f4be13ec587325486f29a60a919924f0eb82d35b52d4a2e7126dfbe0",
+      "teacher_candidates/homr465/repo/homr/transformer/encoder_pytorch_model_465-597144cab54c8f6d0f6c9619df5c5312694eadd6_fp16.onnx": "50823c061533328f5e64df016d3ed16eb9071a9f5c5ee8621646cf9ac9c8a992",
+      "teacher_candidates/homr465/repo/homr/segmentation/segnet_308-3296ccd40960f90ca6ab9c035cca945675d30a0f_fp16.onnx": "60f495496cb41473c0521d0811d8f44b9d5cff892d287974a8aebb3eaee2fa83"
+    },
+    "existing_cpu_weights_intact": true
+  },
+  "note": "Relative paths are rooted in the separate runtime directory; weights are not included in the source archive."
+}

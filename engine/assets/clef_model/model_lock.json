@@ -1,0 +1,11 @@
+{
+  "training_manifest_sha256": "73b3839307a1664636596b12f202a41c030b0ba11af3f723adb9ab798ff5fae5",
+  "model_files_sha256": {
+    "detector.json": "a092eedea48e69ee481a132fb9965cf4525906fc05a678e81b9055934ffbb96e",
+    "eight.png": "60634eaeefa39092c17c7532d0dfc4dcceb54298f8d90fc6f7eee7992536fd9d",
+    "g_core.png": "5442c818f115e266d8046c81ea61967f10f1e8d656f25a384ae4815424b9ab4f"
+  },
+  "thresholds_chosen_from": "fit subset of TRAIN works only",
+  "calibration_from": "four other TRAIN work groups; no validation/test model fitting",
+  "fit_score_separation": 0.5029325187206268
+}

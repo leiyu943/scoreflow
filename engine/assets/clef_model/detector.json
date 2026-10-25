@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "supported_glyph_family": "Verovio default G2 and lower-octave G2",
+  "normalized_staff_space": 16,
+  "template_scales": [
+    0.94,
+    0.96,
+    0.98,
+    1.0,
+    1.02,
+    1.04,
+    1.06
+  ],
+  "eight_offset_from_core": [
+    17,
+    110
+  ],
+  "eight_search_jitter": 2,
+  "minimum_core_score": 0.8831828355789184,
+  "positive_threshold": 0.6998986825346947,
+  "negative_threshold": 0.5490189269185066,
+  "training_groups": 12,
+  "calibration_groups": 4,
+  "unknown_glyph_policy": "abstain",
+  "model_input": "image pixels only",
+  "scoped_limitations": [
+    "single horizontal five-line staff",
+    "G2 only",
+    "no promise for scans or other engraving fonts"
+  ],
+  "fit_positive_min": 0.8759250640869141,
+  "fit_negative_max": 0.37299254536628723
+}

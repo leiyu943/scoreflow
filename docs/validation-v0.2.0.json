@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-25",
+  "version": "0.2.0",
+  "node_unit_tests": 10,
+  "python_export_tests": 3,
+  "desktop": {
+    "passed": true,
+    "checks": [
+      "sandbox hides Node require",
+      "three recognition modes exist",
+      "empty workspace cannot export",
+      "seven sampled instruments are available",
+      "piano selection loads a different sampled waveform",
+      "sample instrument 25 renders and decodes",
+      "sample instrument 27 renders and decodes",
+      "sample instrument 4 renders and decodes",
+      "sample instrument 48 renders and decodes",
+      "sample instrument 73 renders and decodes",
+      "tempo changes preserve pitch with freshly rendered samples",
+      "demo is clearly labelled",
+      "piano roll and score anchors are loaded",
+      "seeking starts actual Web Audio voices",
+      "play toggle resumes",
+      "actual result 1: MIDI visualization and anchors",
+      "actual result 1: playback after seek",
+      "actual result 1: clicking score resolves MIDI onset",
+      "actual result 2: MIDI visualization and anchors",
+      "actual result 2: playback after seek",
+      "actual result 2: clicking score resolves MIDI onset",
+      "actual result 3: MIDI visualization and anchors",
+      "actual result 3: playback after seek",
+      "actual result 3: clicking score resolves MIDI onset",
+      "actual result 4: MIDI visualization and anchors",
+      "actual result 4: playback after seek",
+      "actual result 4: clicking score resolves MIDI onset",
+      "multi-select imports three pages in natural numeric order",
+      "multi-page cancellation stops without exporting an incomplete piece",
+      "retry reuses the completed first page instead of launching its model again",
+      "remaining pages are really inferred sequentially",
+      "three pages share one global MIDI timeline",
+      "playing the second page switches the displayed sheet automatically",
+      "continuous playback crosses a page boundary without restarting its audio source",
+      "manual page browsing preserves the complete piece",
+      "third-page score clicks seek to the corresponding global MIDI beat",
+      "exported whole-piece MIDI includes all pages and exact trailing silence",
+      "reordering pages changes the whole-piece order",
+      "reordering recognized pages rebuilds the piece without running any model again",
+      "append preserves the existing ordered pages and their recognition caches",
+      "appending infers only the newly added page"
+    ],
+    "rendererErrors": []
+  },
+  "recognition_and_cancellation": {
+    "passed": true,
+    "checks": [
+      {
+        "case": "staff-fixed",
+        "events": 32,
+        "layout": "five_only",
+        "engine": "homr",
+        "midi_event_match": true
+      },
+      {
+        "case": "portable-six-valid",
+        "events": 12,
+        "layout": "six_only",
+        "engine": "tabbox",
+        "midi_event_match": true
+      },
+      {
+        "case": "portable-mixed-fixed",
+        "events": 50,
+        "layout": "mixed_5_6",
+        "engine": "homr_staff_mask",
+        "midi_event_match": true
+      },
+      {
+        "case": "portable-mixed-tab",
+        "events": 45,
+        "layout": "mixed_5_6",
+        "engine": "tabbox",
+        "midi_event_match": true
+      },
+      {
+        "case": "real cancellation",
+        "passed": true,
+        "process_exit": 130
+      },
+      {
+        "case": "resume after cancellation, standalone runtime with minimal PATH",
+        "passed": true,
+        "events": 32
+      }
+    ]
+  },
+  "limitations": [
+    "Six-line recognition remains experimental. TAB page coordinates are approximate.",
+    "Four real image inference paths were tested; this is not a general accuracy benchmark.",
+    "Current inference runtime requires Windows x64 and NVIDIA CUDA.",
+    "External TAB code and checkpoint redistribution rights must be confirmed before public bundling."
+  ],
+  "python_page_assembly_tests": 8,
+  "multi_page_example": {
+    "pageCount": 3,
+    "events": 94,
+    "duration": 88,
+    "pages": [
+      {
+        "name": "page-1.png",
+        "start": 0,
+        "duration": 36
+      },
+      {
+        "name": "page-2.png",
+        "start": 36,
+        "duration": 12
+      },
+      {
+        "name": "page-10.png",
+        "start": 48,
+        "duration": 40
+      }
+    ],
+    "midiNotes": 94,
+    "midiEndTicks": 84480
+  },
+  "multi_page_behaviour": [
+    "Natural page sorting, manual reordering, and append",
+    "Sequential GPU inference with completed-page cache",
+    "Global MIDI timeline includes page-ending rests and fractional durations",
+    "Cross-page ties are joined when MusicXML part structure is compatible",
+    "Continuous page turns retain one audio source",
+    "Page-local clicks seek to the whole-piece MIDI position"
+  ],
+  "interface_language": "zh-CN",
+  "documentation_languages": [
+    "zh-CN"
+  ],
+  "chinese_interface_smoke_checks": 19
+}

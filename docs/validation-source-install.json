@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-25",
+  "version": "0.2.0",
+  "passed": true,
+  "default_tab_model": "kk9293/guitar-tab-omr@cf0aa64313e981e3c4337e322df6540958a55e1d",
+  "default_tab_sha256": "833a45752eb99cf525ec2744c20d93175540b487f162caa38e554fc3c7fb0f7e",
+  "legacy_tab_profile_check": true,
+  "isolated_python_version": "3.12.7",
+  "torch": "2.7.1+cu128",
+  "onnxruntime_gpu": "1.24.4",
+  "javascript_unit_tests": 10,
+  "python_export_tests": 3,
+  "python_assembly_tests": 8,
+  "installer_failure_path_tests": 5,
+  "powershell_install_entrypoint": true,
+  "cmd_first_launch_npm_ci": true,
+  "desktop_checks": 21,
+  "recognition": [
+    {
+      "case": "tabbox-public",
+      "events": 13,
+      "midi_bytes": 161,
+      "engine": "tabbox"
+    },
+    {
+      "case": "staff-corrected",
+      "events": 32,
+      "midi_bytes": 332,
+      "engine": "homr"
+    }
+  ],
+  "limits": [
+    "PyTorch 二进制从已验证的相同版本运行环境复用到新的虚拟环境，避免在测试中重复下载 3.27 GB wheel；其余 requirements 通过 pip 安装。",
+    "安装入口在独立环境中执行并通过；模型与代码按固定哈希检查，部分已验证资源复用本地缓存；不是全新 Windows 系统的完整联网安装测试。",
+    "两张谱面的功能检查不代表任意扫描谱准确率。"
+  ]
+}

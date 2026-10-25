@@ -1,0 +1,39 @@
+{
+  "homr_source": {
+    "revision": "6b5b518c964b0388335300a5702e4f6e404b9175",
+    "url": "https://api.github.com/repos/liebharc/homr/zipball/6b5b518c964b0388335300a5702e4f6e404b9175",
+    "sha256": "8b5b684f20dc68a465d84150b8b0353ef57ab7637d0ab2e067f9aaa1e819bda2"
+  },
+  "fluidsynth": {
+    "version": "2.6.0",
+    "url": "https://github.com/FluidSynth/fluidsynth/releases/download/v2.6.0/fluidsynth-v2.6.0-win10-x64-cpp11.zip",
+    "sha256": "817262deacaa748edb3af6731dffe1766b00146790becfccc949a9f701e76681"
+  },
+  "soundfont": {
+    "version": "2.0.3",
+    "url": "https://raw.githubusercontent.com/mrbumpy409/GeneralUser-GS/684543d5e5efaef08d02be50dcda8d552478fa60/GeneralUser-GS.sf2",
+    "sha256": "9575028c7a1f589f5770fccc8cff2734566af40cd26ed836944e9a5152688cfe"
+  },
+  "tab_scripts": {
+    "guitar_omr_eval.py": "0f05e44f88bdfe652112afda7c3da2bf0c0fb8d14421a78595cb8e40db03201c",
+    "guitar_omr_train.py": "5ca334934a8469ef1da9a04ef74af6d23086724f14993583d4d6c7004deecafa",
+    "guitar_omr_dataset_smoke.py": "8846e718f108881d13bcc6415859cd79dc88269342f98368ee5d0414fa6a76c2"
+  },
+  "tab_download_status": "The public installer uses the official Tabbox checkpoint. Local adapted weights remain an optional separate profile.",
+  "tab_source": {
+    "revision": "3cd36084fda5433bb26cb3a3281f25e9e3ee0476",
+    "url": "https://api.github.com/repos/LIU9293/guitar-tab-omr/zipball/3cd36084fda5433bb26cb3a3281f25e9e3ee0476",
+    "sha256": "524819d88361835e20fa9b7adf7bbd06125b0ad34cf1db59a7e79272ce07769a",
+    "scripts": {
+      "guitar_omr_eval.py": "da2bf2e41aa76ecb345f12cc3fc745263eddcee7d78337467fa2800b2b0e7d24",
+      "guitar_omr_train.py": "2c268da08bc3c65d448b1ed584967390679de656ea055709eae1a4adf3059e18",
+      "guitar_omr_dataset_smoke.py": "856f269bd545430046339b31a46ce0dc41fb0a8b1624e2287c91d9a76155efeb"
+    }
+  },
+  "tab_model": {
+    "revision": "cf0aa64313e981e3c4337e322df6540958a55e1d",
+    "url": "https://huggingface.co/kk9293/guitar-tab-omr/resolve/cf0aa64313e981e3c4337e322df6540958a55e1d/best.pt",
+    "sha256": "833a45752eb99cf525ec2744c20d93175540b487f162caa38e554fc3c7fb0f7e",
+    "profile": "tabbox-official"
+  }
+}

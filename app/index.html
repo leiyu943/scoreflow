@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; media-src 'self' blob:; object-src 'none'; base-uri 'none'">
+<title>谱音 · ScoreFlow</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<svg class="svg-defs" aria-hidden="true"><defs>
+<symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13M9 8l12-2"/><ellipse cx="5.5" cy="18" rx="3.5" ry="3"/><ellipse cx="17.5" cy="16" rx="3.5" ry="3"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v6h16v-6"/></symbol>
+<symbol id="i-score" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h4"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 13 8-13 8z"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="M5 5v14m14-14L7 12l12 7z"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6h7l2 3h9v12H3zM3 9V4h7l2 2h9v3"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16M8 3v6m8 0v6m-5 0v6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 9h4l5-5v16l-5-5H4zM17 8q5 4 0 8"/></symbol>
+</defs></svg>
+<aside class="sidebar">
+  <div class="brand"><div class="brand-icon"><svg><use href="#i-music"/></svg></div><div><strong>谱音<span>ScoreFlow</span></strong><small>让纸上的旋律，响起来。</small></div></div>
+  <div class="nav-caption">工作空间</div>
+  <div class="nav-item active"><svg><use href="#i-score"/></svg>谱面转 MIDI<span class="nav-dot"></span></div>
+  <button class="nav-item" id="results"><svg><use href="#i-folder"/></svg>识别结果<svg class="nav-arrow"><use href="#i-arrow"/></svg></button>
+  <div class="sidebar-models"><div class="nav-caption">识别引擎</div>
+    <div class="model-card"><div class="model-symbol">𝄞</div><div><b>五线谱识别</b><span class="pill green">已优化</span><p>沿用调整与校正后的识别链路</p></div></div>
+    <div class="model-card"><div class="tab-symbol">六线</div><div><b>六线谱识别</b><span class="pill amber">优化中</span><p>持续改进吉他弦品与节奏识别</p></div></div>
+  </div>
+  <div class="sidebar-bottom"><div class="local-badge"><span></span>本地处理 · 谱面不上传</div><button id="runtime" class="runtime-button"><svg><use href="#i-settings"/></svg><span id="runtime-label">检查运行环境…</span></button><div class="version">谱音 <span id="version">0.2.0</span> <span class="preview-tag">预览版</span></div></div>
+</aside>
+<main>
+  <header class="app-header"><div><div class="eyebrow">谱面转 MIDI</div><h1>谱面识别工作台</h1></div><div class="header-actions"><button id="append" class="button secondary" title="向当前曲目追加多张谱页">＋ 追加谱页</button><button id="import" class="button secondary"><svg><use href="#i-upload"/></svg>导入多页<span class="shortcut">Ctrl O</span></button><button id="export-top" class="button primary" disabled><svg><use href="#i-download"/></svg>导出 MIDI</button></div></header>
+  <section class="workspace"><div class="score-column"><div id="page-toolbar" class="page-toolbar" hidden><span id="page-count" class="page-count">1 页</span><button id="page-prev" class="icon-button" title="上一页">‹</button><select id="page-select" aria-label="谱页与阅读顺序"></select><button id="page-next" class="icon-button" title="下一页">›</button><span class="page-order-label">页序</span><button id="page-left" class="icon-button" title="将当前页前移">←</button><button id="page-right" class="icon-button" title="将当前页后移">→</button><button id="page-remove" class="page-remove" title="从当前曲目移除此页，原图不受影响">移除此页</button></div>
+    <div class="viewer-toolbar"><div class="document-name"><svg><use href="#i-score"/></svg><span id="filename">尚未导入谱面</span><span id="demo-label" class="pill amber" hidden>播放示例</span></div><div class="viewer-controls"><button class="icon-button" id="zoom-out" title="缩小谱面">−</button><span id="zoom-value">适应宽度</span><button class="icon-button" id="zoom-in" title="放大谱面">＋</button><span class="divider"></span><label class="check-label"><input type="checkbox" id="follow" checked>跟随播放</label></div></div>
+    <div id="score-scroll" class="score-scroll">
+      <div id="empty" class="empty-state"><div class="empty-illustration"><div class="sheet mini-back"></div><div class="sheet mini-front"><div class="staff-decoration">𝄞<span>♩　♪　♫</span></div><div class="staff-decoration second">𝄞<span>♪　♫　♩</span></div><div class="midi-chip"><svg><use href="#i-music"/></svg>MIDI</div></div></div>
+        <span class="eyebrow">从乐谱到声音</span><h2>每一页乐谱，都有声音。</h2><p>一次导入多页，按页序识别并连接成一首完整曲子。<br>点击任意谱页的音符，从你想听的地方开始。</p><button id="empty-import" class="button primary large"><svg><use href="#i-upload"/></svg>选择一张或多张谱面</button><span class="formats">PNG · JPG · WebP · BMP，支持多选与拖入追加</span><button id="demo" class="demo-button">先体验谱面播放 <svg><use href="#i-arrow"/></svg></button>
+      </div>
+      <div id="page" class="score-page" hidden><img id="score-image" alt="当前谱面"><svg id="score-overlay" aria-label="可点击定位播放的谱面音符"></svg></div>
+      <div id="drop-zone" class="drop-zone" hidden><svg><use href="#i-upload"/></svg>松开以导入或追加谱页</div>
+    </div>
+    <div class="score-footnote"><span class="tiny-dot"></span><span id="score-hint">五线谱优先 · 混合谱面自动隔离六线谱区域</span><span id="image-size"></span></div>
+    <div class="roll-panel"><div class="roll-header"><b>音符预览</b><span>钢琴卷帘</span><span id="note-count" class="roll-count">等待识别</span><span class="roll-tip">点击时间位置试听</span></div><div id="roll-scroll" class="roll-scroll"><canvas id="roll" height="144" aria-label="音符钢琴卷帘，点击定位播放"></canvas><div id="roll-head" hidden></div><div id="roll-empty">识别后，在这里查看音高与时值</div></div></div>
+  </div>
+  <aside class="inspector"><div class="inspector-title">识别与导出<span>01 — 03</span></div>
+    <section class="step"><div class="step-title"><span class="step-number">01</span><h2>识别设置</h2></div><label class="field-label" for="mode">识别模式</label><select id="mode"><option value="auto">自动 · 五线 / 六线 / 混合谱</option><option value="staff">五线谱 · 优化链路</option><option value="tab">六线谱 · 支持混合页</option></select><label class="field-label meter-label" for="meter">谱面拍号</label><select id="meter"><option value="auto">自动识别</option><option>2/4</option><option>3/4</option><option>4/4</option><option>3/8</option><option>6/8</option><option>9/8</option><option>12/8</option></select><p class="field-help">可指定拍号，保留模型识别的音符时值。</p><div class="route-card"><div><span class="tiny-dot"></span><b>五线 / 六线 / 混合谱均可导入</b></div><p id="route-description">混合谱默认识别五线谱，也可手动切换为六线谱。</p></div><button id="recognize" class="button primary full" disabled><svg><use href="#i-spark"/></svg>开始识别并保存 MIDI</button><button id="cancel" class="button secondary full" hidden>取消识别</button><div id="progress" class="progress-block" hidden><div class="indeterminate"></div><span id="progress-text">准备中…</span></div></section>
+    <section class="step"><div class="step-title"><span class="step-number">02</span><h2>识别结果</h2></div><dl class="result-stats"><div><dt>谱面类型</dt><dd id="stat-layout">—</dd></div><div><dt>识别音符</dt><dd id="stat-notes">—</dd></div><div><dt>拍号</dt><dd id="stat-meter">—</dd></div><div><dt>原始速度</dt><dd id="stat-tempo">—</dd></div></dl><div id="review" class="review-box" hidden></div><div id="demo-notice" class="demo-notice" hidden>这是程序内置的原创播放示例，用于体验定位和试听，不代表模型识别结果。</div></section>
+    <section class="step export-step"><div class="step-title"><span class="step-number">03</span><h2>导出文件</h2></div><button id="export-midi" class="export-option" disabled><div class="file-icon">MID</div><div><b>MIDI</b><span>在音乐软件中继续创作</span></div><svg><use href="#i-download"/></svg></button><button id="export-xml" class="export-option" disabled><div class="file-icon xml">XML</div><div><b>MusicXML</b><span>在制谱软件中打开</span></div><svg><use href="#i-download"/></svg></button></section>
+    <div class="inspector-note">五线谱识别经过专项调整与校正。<br>六线谱仍在优化，结果建议试听核对。</div>
+  </aside></section>
+  <footer class="transport"><div class="transport-upper"><div class="play-controls"><button id="rewind" class="icon-button rewind" title="回到开头" disabled><svg><use href="#i-back"/></svg></button><button id="play" class="play-button" title="播放 / 暂停（空格）" disabled><svg><use id="play-symbol" href="#i-play"/></svg></button><div class="play-time"><b id="time-current">00:00</b><span>/ <span id="time-total">00:00</span></span></div></div><div class="play-state"><span id="play-status">准备好，听见你的谱面。</span><small id="position-label">识别完成后，点击谱面即可定位播放</small></div><div class="audio-controls"><label class="instrument-label">音色<select id="instrument" aria-label="试听音色"><option value="24">古典吉他</option><option value="25">钢弦吉他</option><option value="27">清音电吉他</option><option value="0">三角钢琴</option><option value="4">电钢琴</option><option value="48">弦乐合奏</option><option value="73">长笛</option></select></label><span class="divider"></span><label class="tempo-label">速度 <input id="tempo" type="number" min="30" max="300" value="120" aria-label="试听速度（每分钟拍数）"><span>拍/分</span></label><span class="divider"></span><svg><use href="#i-volume"/></svg><input id="volume" type="range" min="0" max="100" value="65" aria-label="音量"></div></div><div class="seek-row"><span id="beat-label">0.0 拍</span><input id="seek" type="range" min="0" max="1" value="0" step="0.01" aria-label="播放位置" disabled><span id="end-label">0.0 拍</span></div><div class="transport-bottom"><span><span class="tiny-dot"></span><span id="sound-status">GeneralUser GS 采样音色 · 7 种音色可选</span></span><span>空格 播放 / 暂停<span class="bottom-separator">·</span>点击谱面 定位播放</span></div></footer>
+</main><div id="toast" class="toast" role="status" hidden></div><script src="music.cjs"></script><script src="renderer.js"></script></body></html>

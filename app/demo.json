@@ -1,0 +1,181 @@
+{
+  "name": "晨间小调 · 原创播放示例",
+  "width": 1280,
+  "height": 600,
+  "events": [
+    {
+      "pitch": 64,
+      "start": 0,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        225,
+        201
+      ]
+    },
+    {
+      "pitch": 67,
+      "start": 1,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        351,
+        187
+      ]
+    },
+    {
+      "pitch": 69,
+      "start": 2,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        477,
+        180
+      ]
+    },
+    {
+      "pitch": 67,
+      "start": 3,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        603,
+        187
+      ]
+    },
+    {
+      "pitch": 65,
+      "start": 4,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        730,
+        194
+      ]
+    },
+    {
+      "pitch": 64,
+      "start": 5,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        856,
+        201
+      ]
+    },
+    {
+      "pitch": 62,
+      "start": 6,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        982,
+        208
+      ]
+    },
+    {
+      "pitch": 60,
+      "start": 7,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        1108,
+        215
+      ]
+    },
+    {
+      "pitch": 64,
+      "start": 8,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        225,
+        386
+      ]
+    },
+    {
+      "pitch": 67,
+      "start": 9,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        351,
+        372
+      ]
+    },
+    {
+      "pitch": 71,
+      "start": 10,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        477,
+        358
+      ]
+    },
+    {
+      "pitch": 69,
+      "start": 11,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        603,
+        365
+      ]
+    },
+    {
+      "pitch": 67,
+      "start": 12,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        730,
+        372
+      ]
+    },
+    {
+      "pitch": 64,
+      "start": 13,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        856,
+        386
+      ]
+    },
+    {
+      "pitch": 62,
+      "start": 14,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        982,
+        393
+      ]
+    },
+    {
+      "pitch": 60,
+      "start": 15,
+      "duration": 1,
+      "velocity": 78,
+      "image_xy": [
+        1108,
+        400
+      ]
+    }
+  ],
+  "geometry": [],
+  "bpm": 108,
+  "meters": [
+    {
+      "start": 0,
+      "meter": [
+        4,
+        4
+      ]
+    }
+  ],
+  "route": {
+    "layout": "five_only"
+  }
+}

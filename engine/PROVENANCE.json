@@ -1,0 +1,85 @@
+{
+  "description": "Extracted from the user-provided score_phrase_marker recognition pipeline. No annotation UI or training datasets included.",
+  "files": [
+    {
+      "source": "score_pipeline_core.py",
+      "destination": "engine/score_pipeline_core.py",
+      "source_sha256": "474652a36b482bd6e1e4b17fa00b5f588aee14c5c55571cdc1e06cfaf57e46d4"
+    },
+    {
+      "source": "score_image_routing.py",
+      "destination": "engine/score_image_routing.py",
+      "source_sha256": "cde59bfd5c537513f533896dd695ef73a30cc15a5d0afca3d5b04830db3af98f"
+    },
+    {
+      "source": "staff_barline_filter.py",
+      "destination": "engine/staff_barline_filter.py",
+      "source_sha256": "38a24b7a9be8a67a82d2350646664cf569b15b412ac8e1412bd5f350c35210d0"
+    },
+    {
+      "source": "whole_page_mask.py",
+      "destination": "engine/whole_page_mask.py",
+      "source_sha256": "d106701b4e61547106cdef429cb0c9f519929f1225da007143b41a9de47971a5"
+    },
+    {
+      "source": "full_page_routing.py",
+      "destination": "engine/full_page_routing.py",
+      "source_sha256": "e33ef59cca92edc0e85eb4ec9bcfb8d1a5760a020409af82075efab926c5b6de"
+    },
+    {
+      "source": "teacher_image_refinement.py",
+      "destination": "engine/teacher_image_refinement.py",
+      "source_sha256": "595627a58814eff1762fbbce3d058cdc395b5a4353cbac23fa6e843ded7eb5e2"
+    },
+    {
+      "source": "simple_event_rules.py",
+      "destination": "engine/simple_event_rules.py",
+      "source_sha256": "7f2da36a2f5e5485c07f681030b387485fbe1719b1c54e1d3eb5fd3f49df860d"
+    },
+    {
+      "source": "run_homr_gpu.py",
+      "destination": "engine/run_homr_gpu.py",
+      "source_sha256": "47030c2708935e629c23799f06f2d8ac715546bcd738a04b8ecae33e7d7b0435"
+    },
+    {
+      "source": "tabbox_batch_worker.py",
+      "destination": "engine/tabbox_batch_worker.py",
+      "source_sha256": "dc85fad94ae5302e25dec1bb5796eaed906b91e59bb06b4f074374af20b881ed"
+    },
+    {
+      "source": "gpu_guard.py",
+      "destination": "engine/gpu_guard.py",
+      "source_sha256": "5b2496b2017a5dc1683f4dd804b0a0971e44a3ff3969465d4e9d9a30aff40607"
+    },
+    {
+      "source": "teacher_timing_v1_20261024/music_xml_generator.py",
+      "destination": "engine/vendor/music_xml_generator.py",
+      "source_sha256": "5b43383a1daf0d0fa58490c084647f30de7f8e202c7d85c2f0bf1c4c8d839f25"
+    },
+    {
+      "source": "teacher_candidates/homr465/repo/LICENSE",
+      "destination": "engine/vendor/HOMR-LICENSE",
+      "source_sha256": "a6de0dc64ada3b5141517c0167b109dfc2adb3d1d8b27ff1745f337331b2a5f4"
+    },
+    {
+      "source": "unified_score_pipeline.py",
+      "destination": "engine/pipeline.py",
+      "source_sha256": "72f55bc580b3d26ab62021d4c885189102bb9a035469aa59a286075288f2e1c8"
+    },
+    {
+      "source": "mixed_tab_smoke.py",
+      "destination": "engine/tab_tokens.py",
+      "extracted_functions": [
+        "clusters",
+        "detect_staffs",
+        "token_bars"
+      ]
+    }
+  ],
+  "extraction_changes": [
+    "Independent runtime paths and inference-only dependencies",
+    "Selectable staff/TAB modes and retained model calibration",
+    "Optional explicit MIDI end time for complete-page trailing rests",
+    "New assemble.py joins page timelines, MusicXML parts and cross-page ties"
+  ]
+}

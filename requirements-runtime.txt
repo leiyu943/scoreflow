@@ -1,0 +1,15 @@
+# Python 3.12 / Windows x64. PyTorch is installed separately from its CUDA 12.8 index.
+# Downloaded libraries belong in the external runtime, never in the source repository.
+numpy==2.5.2
+pillow==12.3.0
+onnxruntime-gpu==1.24.4
+opencv-python==4.14.0.94
+rapidocr==3.7.0
+pypdfium2==5.14.0
+requests==2.34.2
+typing_extensions==4.16.0
+timm==1.0.30
+huggingface-hub==0.29.3
+omegaconf==2.3.0
+pyclipper==1.4.0
+shapely==2.1.2
